@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "Wireless Headphones",
+    "price": 89.99,
+    "category": "Electronics",
+    "stock": 34,
+    "rating": 4.5,
+    "image": "/images/headphones.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Smart Watch",
+    "price": 129.99,
+    "category": "Electronics",
+    "stock": 18,
+    "rating": 4.3,
+    "image": "/images/smartwatch.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Running Shoes",
+    "price": 74.99,
+    "category": "Fashion",
+    "stock": 52,
+    "rating": 4.7,
+    "image": "/images/runningShoes.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Backpack",
+    "price": 49.99,
+    "category": "Accessories",
+    "stock": 27,
+    "rating": 4.2,
+    "image": "/images/backpack.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Bluetooth Speaker",
+    "price": 59.99,
+    "category": "Electronics",
+    "stock": 40,
+    "rating": 4.6,
+    "image": "/images/bluetoothSpeaker.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Desk Lamp",
+    "price": 34.99,
+    "category": "Home",
+    "stock": 22,
+    "rating": 4.1,
+    "image": "/images/deskLamp.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Gaming Mouse",
+    "price": 45.99,
+    "category": "Electronics",
+    "stock": 15,
+    "rating": 4.8,
+    "image": "/images/gamingMouse.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Water Bottle",
+    "price": 19.99,
+    "category": "Lifestyle",
+    "stock": 60,
+    "rating": 4.4,
+    "image": "/images/waterBottle.jpg"
+  },
+  {
+    "id": 9,
+    "title": "iPhone 15 Pro",
+    "price": 999.99,
+    "category": "Electronics",
+    "stock": 60,
+    "rating": 4.4,
+    "image": "/images/iphone15pro.jpg"
+  },
+  {
+    "id": 10,
+    "title": "MacBook Pro 16\"",
+    "price": 1999.99,
+    "category": "Electronics",
+    "stock": 15,
+    "rating": 4.8,
+    "image": "/images/macbookpro16.jpg"
+  },
+  {
+    "id": 11,
+    "title": "AirPods Pro",
+    "price": 249.99,
+    "category": "Electronics",
+    "stock": 0,
+    "rating": 4.6,
+    "image": "/images/airpodspro.jpg"
+  }
+]
