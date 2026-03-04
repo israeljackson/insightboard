@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProductsDetailsModal from "./productsDetailsModal";
+import ProductsDetailsModal from "./ProductsDetailsModal";
 import ProductCard from "../components/ProductCard";
 
 function ProductList({
