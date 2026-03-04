@@ -8,9 +8,13 @@ function ProductsDetailsModal({isOpen, onClose, product, onSave, onDelete}) {
 
   // Toggle between view and edit mode when the product changes
     useEffect(() => {
-      setEditedProduct({...product});
-      setIsEditing(false);
-    }, [product]);  
+      const id = setTimeout(() => {
+        setEditedProduct({ ...product });
+        setIsEditing(false);
+      }, 0);
+
+    return () => clearTimeout(id);
+  }, [product]);
 
     // If no product is selected, do nothing
     if (!product) return null;
@@ -87,7 +91,7 @@ function ProductsDetailsModal({isOpen, onClose, product, onSave, onDelete}) {
               <h5 className="text-lg font-semibold">Category: {editedProduct.category}</h5>
               <p className="text-gray-700">Price: ${editedProduct.price}</p>
               <p className="text-gray-700">Stock: {editedProduct.stock}</p>
-              <p className="text-gray-700 font-medium mt-3">{editedProduct.description}</p>
+              <p className="text-gray-700 font-medium">{editedProduct.description}</p>
             </div>
             
           )}
