@@ -68,7 +68,7 @@ function Tasks({tasks, setTasks, setNotifications}) {
 
   return ( 
     <>
-      <Title />
+      <Title subtitle={"Track your tasks and reminders"} />
 
       <div>
           <h1 className="font-bold text-xl mb-4">Quick Actions</h1>

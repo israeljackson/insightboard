@@ -1,14 +1,13 @@
 import { Routes, Route } from "react-router-dom"
-import Header from "./components/Header"
-import Sidebar from "./components/Sidebar"
-import { PanelLeftClose, PanelLeftOpen } from 'lucide-react';
+import DashboardLayout from "./components/DashboardLayout"
 
 import Dashboard from "./pages/Dashboard"
 import Products from "./pages/Products"
 import Reports from "./pages/Reports"
 import ImportData from "./pages/ImportData"
-
+import Login from "./pages/login";
 import { useState } from "react"
+
 import Tasks from "./pages/Tasks"
 
 
@@ -27,47 +26,43 @@ function App() {
     {id: 3, message: "Monthly sales report is ready", read: false},
   ])
 
-  const [isCollapsed, setIsCollapsed] = useState(false)
-
-  const toggleSidebar = () =>
-    setIsCollapsed(!isCollapsed)
   
 
   return (
-    <div className="flex flex-col h-screen">
-      {/* Header */}
-      <Header notifications={notifications} setNotifications={setNotifications} tasks={tasks}/>
+    <Routes>
+      {/* Login Page only */}
+      <Route path="/" element= {<Login/>} />
 
-      {/* Sidebar + Main */}
-      <div className="flex flex-1">
+      <Route
+        element={
+          <DashboardLayout
+            notifications={notifications}
+            setNotifications={setNotifications}
+            tasks={tasks}
+          />
+        }
+      >
 
-        <aside className={`bg-blue-950 text-white  h-full px-4 py-6 transition-all duration-300 ${isCollapsed ? "w-16" : "w-64"}`}>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/product" element={<Products />} />
+        <Route path="/report" element={<Reports />} />
+        <Route path="/import" element={<ImportData />} />
+        <Route
+          path="/todo"
+          element={
+            <Tasks
+              tasks={tasks}
+              setTasks={setTasks}
+              setNotifications={setNotifications}
+            />
+          }
+        />
 
-          {/* Collapse icon */}
-          <button onClick= {toggleSidebar}>
-            {isCollapsed ? (
-              <PanelLeftOpen size={24} />
-            ) : (
-              <PanelLeftClose size={24} />
-            )}
-          </button>
+      </Route>
+    </Routes>
 
-          <Sidebar collapsed={isCollapsed} />
-        </aside>
 
-        {/* Main content */}
-        <main className="flex-1 overflow-y-auto bg-gray-100 p-3">
-
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/product" element={<Products />} />
-            <Route path="/report" element={<Reports />} />
-            <Route path="/import" element={<ImportData />} />
-            <Route path="/todo" element={<Tasks tasks={tasks} setTasks={setTasks} setNotifications={setNotifications} />} />
-          </Routes>
-        </main>
-      </div>  
-    </div>
+    
   )
 }
 

@@ -1,10 +1,10 @@
 import { useLocation } from "react-router-dom";
 
-function Title({children}) {
+function Title({children,subtitle}) {
   const location = useLocation();
 
   const titles = {
-    "/":"Dashboard",
+    "/dashboard":"Dashboard",
     "/product" : "Products",
     "/report" : "Reports",
     "/import" : "Import Data",
@@ -12,9 +12,13 @@ function Title({children}) {
   }
   return ( 
     <div className="flex justify-between items-center mb-4 shadow-l p-3 bg-white rounded-2xl">
-      <h1 className="font-bold text-3xl ">
+      <div>
+        <h1 className="font-bold text-3xl ">
         {titles[location.pathname]}
       </h1>
+      {subtitle && <p>{subtitle}</p>}
+      </div>
+      
       <div className="flex items-center gap-4">
         {/* Right side: actions */}
         {children && <div className="flex items-center gap-4">{children}</div>}

@@ -4,7 +4,7 @@ import Title from "../components/Title";
 function Reports() {
   return ( 
     <>
-      <Title />
+      <Title subtitle={"Analytics & insights"}/>
       <h1>Reports page</h1>
     </>
     

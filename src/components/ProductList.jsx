@@ -9,7 +9,8 @@ function ProductList({
   page,
   setPage,
   search,
-  setSearch
+  setSearch,
+  retryFetch
 }) {
 
   // state to handle selected product 
@@ -38,8 +39,22 @@ function ProductList({
         />
       </div>
 
-      {loading && <p>Loading...</p>}
-      {error && <p className="text-red-500">{error}</p>}
+      {loading && 
+        <div className="text-center py-4">
+          <p className="animate-pulse">Loading products...</p>
+        </div>
+      }
+      {error && 
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+          <p>{error}</p>
+          <button
+            onClick={() => retryFetch()}
+            className="mt-2 bg-red-500 text-white px-3 py-1 rounded"
+          >
+            Retry
+          </button>
+        </div>
+      }
       {!loading && !error && (
         <div className="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4">
           {products.map(product => (
