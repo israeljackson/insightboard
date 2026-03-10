@@ -19,7 +19,7 @@ function SalesChart({ data, darkMode = false }) {
 
   return (
     <div className="bg-white rounded-xl mt-6 shadow-sm p-6">
-      <h1 className="text-lg font-semibold mb-4">Sales Overview</h1>
+      <h1 className="text-xl font-bold mb-4">Sales Overview</h1>
 
       <div className="w-full h-80">
         <ResponsiveContainer width="100%" height="100%">

@@ -27,7 +27,7 @@ function RecentActivity() {
       <div className="space-y-4">
 
         {activities.length === 0 && (
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text">
             No recent activity
           </p>
         )}
@@ -43,7 +43,7 @@ function RecentActivity() {
             >
 
               {/* Icon */}
-              <div className="p-2 bg-blue-300 rounded-lg">
+              <div className="p-2 bg-blue-100 rounded-lg">
                 {Icon && <Icon className="w-5 h-5 text-blue-600 " />}
               </div>
 

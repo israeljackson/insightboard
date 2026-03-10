@@ -11,7 +11,7 @@ function Sidebar({collapsed}) {
     <ul className=" text-black font-medium space-y-2 pt-4 text-xl sticky top-0 " >
 
 
-      <SidebarItem to="/dashboard" icon={Squares2X2Icon} collapsed={collapsed}>{!collapsed && "DashBoard"}</SidebarItem>
+      <SidebarItem to="/dashboard" icon={Squares2X2Icon} >{!collapsed && "DashBoard"}</SidebarItem>
 
       <SidebarItem to="/product" icon={CubeIcon}>{!collapsed && "Products"}</SidebarItem>
 

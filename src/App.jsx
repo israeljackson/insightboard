@@ -13,11 +13,7 @@ import Tasks from "./pages/Tasks"
 
 function App() {
   // State for managing tasks in the quick actions section
-  const [tasks, setTasks] = useState([
-    {id: 1, title: "Restock AirPods Pro", description: "Restock 10 units of AirPods Pro", completed: false},
-    {id: 2, title: "Update product descriptions", description: "Update descriptions for all products", completed: true},
-    {id: 3, title: "Run sales report", description: "Generate monthly sales report", completed: false},
-  ])
+  const [tasks, setTasks] = useState([])
 
   // state for managing notifications 
   const [notifications, setNotifications] = useState([

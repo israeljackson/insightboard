@@ -1,6 +1,8 @@
 import { useState } from "react";
 import TaskCard from "../components/TaskCard";
 import Title from "../components/Title";
+import { useActivity } from "../context/useActivity";
+
 
 
 function Tasks({tasks, setTasks, setNotifications}) {
@@ -21,6 +23,7 @@ function Tasks({tasks, setTasks, setNotifications}) {
         description: newTaskDesc,
         completed: false
       }
+
 
       // Update the tasks state by adding the new task to the existing list of tasks
       setTasks(prevTasks => [...prevTasks, taskToAdd]);
@@ -62,9 +65,11 @@ function Tasks({tasks, setTasks, setNotifications}) {
       // Remove completed tasks from notifications
       if (willBeCompleted) {
         setNotifications(prev => prev.filter(n => n.taskId !== id));
+        logActivity("task_completed", `Task Completed: ${taskToToggle.title}`)
       }
-    }
-  
+    }  
+
+    const {logActivity} = useActivity()
 
   return ( 
     <>
@@ -109,7 +114,9 @@ function Tasks({tasks, setTasks, setNotifications}) {
               description={task.description}
               onDelete={handleDeleteTask}
               completed={task.completed}
-              onToggle={handleToggleTask}
+              onToggle={() =>
+                handleToggleTask(task.id)
+              }
             />
           ))}
         </div>

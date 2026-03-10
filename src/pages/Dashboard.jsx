@@ -44,7 +44,7 @@ function Dashboard() {
   // low stock items
   const lowStockItems = useMemo(() => {
      return products.filter(
-      product => product.stock > 0 && product.stock <= 5
+      product => product.stock > 0 && product.stock <= 20
     ).length
   },[products])
 
