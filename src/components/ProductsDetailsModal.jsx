@@ -19,6 +19,9 @@ function ProductsDetailsModal({isOpen, onClose, product, onSave, onDelete}) {
     // If no product is selected, do nothing
     if (!product) return null;
 
+    const imageSrc =
+      editedProduct?.thumbnail || editedProduct?.image || "/images/product-image.jpg";
+
     // Handle input changes in edit mode and update the editedProduct state
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -82,7 +85,7 @@ function ProductsDetailsModal({isOpen, onClose, product, onSave, onDelete}) {
             </div>): (
             <div className="w-96 max-h- bg-white rounded-2xl p-6 overflow-y-auto">
               <img
-                src={editedProduct.thumbnail}
+                src={imageSrc}
                 alt={editedProduct.title}
                 className="w-full h-full object-cover rounded-md"
               />

@@ -1,4 +1,5 @@
 function ProductCard({title, price, stock, image, onClick}) {
+  const imageSrc = image || "/images/product-image.jpg";
 
   let pillClasses = "rounded-2xl p-1 mt-2 px-3 py-1 text-sm font-medium"
   let pillText = ""
@@ -17,7 +18,7 @@ function ProductCard({title, price, stock, image, onClick}) {
   return ( 
     <div className="bg-white rounded-lg shadow-lg p-4 transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer" onClick={onClick}>
       <div className="w-full aspect-square mb-4">
-        <img src={image} alt={title} className="w-full h-full object-cover rounded-md" />
+        <img src={imageSrc} alt={title} className="w-full h-full object-cover rounded-md" />
       </div>
       <h3 className="font-bold text-lg">{title}</h3>
       <p className="text-gray-600">${price}</p>

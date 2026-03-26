@@ -1,20 +1,33 @@
 import { apiClient } from "./apiClient"
-
 export const getProducts = async ({ page, limit, search }) => {
-  const skip = (page - 1) * limit
 
-  let endpoint = ""
+  const data = await apiClient("/products")
+
+  // Convert values
+  let normalized = data.map(product => ({
+    ...product,
+    price: Number(product.price),
+    stock: Number(product.stock),
+    rating: Number(product.rating)
+  }))
+
+  let filtered = normalized
 
   if (search && search.trim() !== "") {
-    endpoint = `/products/search?q=${search}&limit=${limit}&skip=${skip}`
-  } else {
-    endpoint = `/products?limit=${limit}&skip=${skip}`
+    filtered = normalized.filter(product =>
+      product.title?.toLowerCase().includes(search.toLowerCase())
+    )
   }
 
-  const data = await apiClient(endpoint)
+  const total = filtered.length
+
+  const start = (page - 1) * limit
+  const end = start + limit
+
+  const paginatedProducts = filtered.slice(start, end)
 
   return {
-    products: data.products,
-    total: data.total
+    products: paginatedProducts,
+    total
   }
 }

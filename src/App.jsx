@@ -16,11 +16,7 @@ function App() {
   const [tasks, setTasks] = useState([])
 
   // state for managing notifications 
-  const [notifications, setNotifications] = useState([
-    {id: 1, message: "New order received: Order #1234", read: false},
-    {id: 2, message: "Product low in stock: AirPods Pro", read: true},
-    {id: 3, message: "Monthly sales report is ready", read: false},
-  ])
+  const [notifications, setNotifications] = useState([])
 
   
 

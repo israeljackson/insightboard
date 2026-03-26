@@ -12,6 +12,8 @@ function ProductList({
   setSearch,
   retryFetch
 }) {
+  const getProductImage = (product) =>
+    product?.thumbnail || product?.image || "/images/product-image.jpg";
 
   // state to handle selected product 
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -63,7 +65,7 @@ function ProductList({
               title={product.title}
               price={product.price}
               stock={product.stock}
-              image={product.thumbnail}
+              image={getProductImage(product)}
               onClick={() => handleSelect(product)}
             />
           ))}
