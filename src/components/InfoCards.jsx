@@ -6,8 +6,8 @@ function InfoCards({icon :Icon, iconBg, iconColor, value, title}) {
         {Icon && <Icon className={`w-6 h-6 ${iconColor} justify-center items-center`}/>}
       </div>
       
-      <h1 className="font-bold text-2xl mb-2">{value}</h1>
-      <p className="text-sm">{title}</p>
+      <h1 className="font-bold text-3xl mb-1">{value}</h1>
+      <p className="text-xs text-gray-400 uppercase tracking-wide">{title}</p>
     </div>
    );
 }

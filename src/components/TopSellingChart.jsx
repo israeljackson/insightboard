@@ -4,6 +4,7 @@ import {
   XAxis,
   YAxis,
   Tooltip,
+  Cell,
   ResponsiveContainer
 } from "recharts";
 
@@ -36,15 +37,21 @@ function TopSellingChart({ products }) {
             type="category"
             dataKey="name"
             stroke="#94a3b8"
+            width={120}
+            tick={{ fontSize: 12 }}
+            tickFormatter={(name) => name.length > 18 ? name.slice(0, 18) + "…" : name}
           />
 
           <Tooltip />
 
-          <Bar
-            dataKey="units"
-            fill="#34d399"
-            radius={[6,6,6,6]}
-          />
+          <Bar dataKey="units" radius={[6,6,6,6]}>
+            {chartData.map((entry, index) => (
+              <Cell
+                key={index}
+                fill={`rgba(52, 211, 153, ${1 - index * 0.15})`}
+              />
+            ))}
+          </Bar>
 
         </BarChart>
       </ResponsiveContainer>

@@ -8,7 +8,7 @@ function SidebarItem({to, icon, children, collapsed}) {
       to={to}
       className={({isActive}) =>
         `flex items-center gap-2 p-2 rounded-lg cursor-pointer ${isActive ?
-          "bg-blue-200 text-blue-600" : "hover:bg-gray-200"} ${collapsed ? "justify-center" : ""}
+          "border-l-4 border-blue-600 text-blue-600 bg-blue-50 pl-1" : "hover:bg-gray-200"} ${collapsed ? "justify-center" : ""}
         `}
     >
         <Icon className={collapsed ? "h-10 w-10" : "h-6 w-6" }/>

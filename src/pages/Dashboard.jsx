@@ -1,6 +1,6 @@
 import Title from "../components/Title";
 import InfoCards from "../components/InfoCards";
-import { CubeIcon, CurrencyDollarIcon, ExclamationCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Package, DollarSign, AlertTriangle, PackageX } from "lucide-react";
 import { useState,useEffect, useMemo } from "react";
 import { getProducts } from "../services/products";
 import SalesChart from "../components/SalesChart";
@@ -82,35 +82,35 @@ function Dashboard() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
       {/* Total Products */}
     <InfoCards 
-      icon={CubeIcon}
-      iconBg={"bg-blue-100"}
-      iconColor={"text-blue-600 "}
+      icon={Package}
+      iconBg={"bg-blue-400"}
+      iconColor={"text-gray-100 "}
       value={totalProducts} // Value for total producs
       title={"Total Products"}
     />
 
     {/* Inventory Value */}
     <InfoCards 
-      icon={CurrencyDollarIcon}
-      iconBg={" bg-green-100"}
-      iconColor={"text-green-600 "}
+      icon={DollarSign}
+      iconBg={" bg-green-400"}
+      iconColor={"text-gray-100 "}
       value={inventoryValueFormatted} // Value for inventory value
       title={"Inventory Value"}
     />
     {/* Low Stock Items */}
     <InfoCards 
-      icon={ExclamationCircleIcon}
-      iconBg={"bg-yellow-100"}
-      iconColor={"text-yellow-600 "}
+      icon={AlertTriangle}
+      iconBg={"bg-yellow-400"}
+      iconColor={"text-gray-100 "}
       value={lowStockItems} // Value for low stock items
       title={"Low Stock Items"}
     />
 
     {/* Out of stock Items */}
     <InfoCards 
-      icon={XMarkIcon}
-      iconBg={"bg-red-100"}
-      iconColor={"text-red-600 "}
+      icon={PackageX}
+      iconBg={"bg-red-400"}
+      iconColor={"text-gray-100 "}
       value={outOfStockItems} // Value for out of stock items
       title={"Out of Stock Items"}
     />
